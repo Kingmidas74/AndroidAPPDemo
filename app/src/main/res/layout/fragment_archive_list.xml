@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="archives_list"
+    android:id="@+id/frameLayout">
+    <ProgressBar
+        android:id="@+id/archive_load_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/archives_not_exist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:text="NO DATA AVAILABLE" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayoutArchive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/archive_list"
+            android:name="com.demo.online.archiveListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.demo.online.archives.archiveListFragment"
+            tools:listitem="@layout/fragment_archive_list_item"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>

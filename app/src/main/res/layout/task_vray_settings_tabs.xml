@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/task_vray_settings_tabs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.demo.online.scenes.tasks.settings.TaskVRAYSettingsFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/single_grid_step"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/render_tabs"
+            android:layout_width="wrap_content"
+            app:tabMode="scrollable"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Common" />
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vray" />
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GI" />
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings" />
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Render elements" />
+
+        </android.support.design.widget.TabLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vray_settings_content_frame"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <ScrollView android:layout_height="fill_parent" android:id="@+id/vray_settings_common"
+            android:layout_width="match_parent"
+            android:visibility="visible">
+            <RelativeLayout  style="@style/ListItem">
+                <TextView
+                    style="@style/Title"
+                    android:text="COMMON"/>
+            </RelativeLayout>
+
+        </ScrollView>
+        <ScrollView android:layout_height="fill_parent" android:id="@+id/vray_settings_vray"
+            android:layout_width="match_parent"
+            android:visibility="visible">
+            <RelativeLayout  style="@style/ListItem">
+                <TextView
+                    style="@style/Title"
+                    android:text="VRAY"/>
+            </RelativeLayout>
+
+        </ScrollView>
+        <ScrollView android:layout_height="fill_parent" android:id="@+id/vray_settings_gi"
+            android:layout_width="match_parent"
+            android:visibility="visible">
+            <RelativeLayout  style="@style/ListItem">
+                <TextView
+                    style="@style/Title"
+                    android:text="GI"/>
+            </RelativeLayout>
+
+        </ScrollView>
+        <ScrollView android:layout_height="fill_parent" android:id="@+id/vray_settings_settings"
+            android:layout_width="match_parent"
+            android:visibility="visible">
+            <RelativeLayout  style="@style/ListItem">
+                <TextView
+                    style="@style/Title"
+                    android:text="SETTINGS"/>
+            </RelativeLayout>
+
+        </ScrollView>
+        <ScrollView android:layout_height="fill_parent" android:id="@+id/vray_settings_re"
+            android:layout_width="match_parent"
+            android:visibility="visible">
+            <RelativeLayout  style="@style/ListItem">
+                <TextView
+                    style="@style/Title"
+                    android:text="REnder"/>
+            </RelativeLayout>
+
+        </ScrollView>
+    </FrameLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

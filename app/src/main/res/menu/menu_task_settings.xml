@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.demo.online.VRAYTaskSettingsFragment">
+    <item
+        android:id="@+id/create_task"
+        android:orderInCategory="100"
+        android:title="@string/Create"
+        android:icon="@drawable/ic_start"
+        app:showAsAction="always|withText"
+        />
+</menu>

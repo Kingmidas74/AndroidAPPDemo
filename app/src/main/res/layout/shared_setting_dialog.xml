@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable name="vm" type="com.demo.online.scenes.tasks.settings.SharedSettings"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:id="@+id/share_settings_dialog"
+        >
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:scrollingCache="true"
+            android:layout_margin="@dimen/double_grid_step">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="18sp"
+                        android:text="Soft version:"
+                        />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/soft_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_alignParentEnd="true"
+                        android:entries="@array/Soft"
+                        android:selectedItemPosition="@{vm.SoftIndex}"
+                        app:selectedValueChangedListener="@{vm.SoftWatcher}"
+                        app:backgroundTint="@color/colorAccent"
+
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/double_grid_step">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="18sp"
+                        android:text="RAM Size:"
+                        />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/ram_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_alignParentEnd="true"
+                        android:entries="@array/RAM"
+                        android:selectedItemPosition="@{vm.RAMIndex}"
+                        app:selectedValueChangedListener="@{vm.RAMWatcher}"
+                        app:backgroundTint="@color/colorAccent"
+
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/double_grid_step">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="18sp"
+                        android:text="Camera:"
+                        />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/camera_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_alignParentEnd="true"
+                        app:backgroundTint="@color/colorAccent"
+                        android:entries="@{vm.cameras}"
+                        android:selectedItemPosition="@{vm.CameraIndex}"
+                        app:selectedValueChangedListener="@{vm.CameraWatcher}"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/double_grid_step">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="18sp"
+                        android:text="Scene state:"
+                        />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/scene_state_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_alignParentEnd="true"
+                        app:backgroundTint="@color/colorAccent"
+                        android:entries="@{vm.SceneStates}"
+                        android:selectedItemPosition="@{vm.SceneStateIndex}"
+                        app:selectedValueChangedListener="@{vm.SceneStateWatcher}"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/double_grid_step">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="18sp"
+                        android:text="State set:"
+                        />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/state_set_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_alignParentEnd="true"
+                        app:backgroundTint="@color/colorAccent"
+                        android:entries="@{vm.StateSets}"
+                        android:selectedItemPosition="@{vm.StateSetIndex}"
+                        app:selectedValueChangedListener="@{vm.StateSetWatcher}"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/double_grid_step">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="18sp"
+                        android:text="Is it distribute?"
+                        />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/is_distribute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                        android:layout_alignParentEnd="true"
+                        android:checked="@{vm.IsDistribute}"
+                        android:onCheckedChanged="@{()->vm.switchDistribute()}"
+                        app:backgroundTint="@color/colorAccent"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#555555"
+                        android:backgroundTint="@color/colorAccent">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/money_value"
+                            android:backgroundTint="@color/colorAccent"
+                            style="@style/Widget.AppCompat.EditText"
+                            android:maxLines="1"
+                            android:text="@{vm.title}"
+                            app:textChangedListener="@{vm.titleWatcher}"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:hint="@string/Title"/>
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

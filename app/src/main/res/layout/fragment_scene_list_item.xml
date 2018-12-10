@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable name="item" type="com.demo.online.scenes.SceneItem"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        app:cardElevation="@dimen/activity_vertical_margin"
+        style="@style/SceneCard"
+        app:selected="@{item.IsSelected}"
+        >
+        <LinearLayout style="@style/ContainerItem" android:orientation="vertical">
+            <RelativeLayout style="@style/CardHeader">
+                <ImageView
+                    android:id="@+id/scene_render_type"
+                    android:contentDescription="@string/Status"
+                    android:layout_alignParentStart="true"
+                    app:renderType="@{item.scene.RenderType}"
+                    style="@style/SceneRenderType"/>
+
+                <TextView
+                    android:id="@+id/scene_title"
+                    style="@style/Title"
+                    android:text="@{item.scene.Title}"
+                    android:layout_toEndOf="@id/scene_render_type"/>
+
+                <TextView
+                    android:id="@+id/scene_status"
+                    style="@style/SubTitle"
+                    android:text="@{item.scene.Status.toString()}"
+                    android:layout_toEndOf="@id/scene_render_type"
+                    android:layout_below="@id/scene_title"/>
+
+                <TextView
+                    android:id="@+id/scene_cost"
+                    style="@style/PrimaryInfo"
+                    android:text="@{item.scene.Cost.toString()}"
+                    android:layout_alignParentEnd="true"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/CardContent"
+                android:visibility="visible"
+                >
+            </RelativeLayout>
+            <LinearLayout style="@style/CardActions">
+                <ImageButton
+                    app:srcCompat="@drawable/ic_add"
+                    android:id="@+id/scene_add_task_btn"
+                    style="@style/CardActionsButton"/>
+                <ImageButton
+                    app:srcCompat="@drawable/ic_info"
+                    android:id="@+id/scene_logs_btn"
+                    style="@style/CardActionsButton"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

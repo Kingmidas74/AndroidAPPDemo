@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">demo Online</string>
+    <string name="ForAuthentifcation">For access to the render farm, please sign in</string>
+    <string name="ForRegistration">For access to the render farm, please sign up</string>
+    <string name="SignIn">Sign In</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="Restore">Restore password</string>
+    <string name="RememberMe">Remember</string>
+    <string name="NamePlaceholder">Name</string>
+    <string name="SurnamePlaceholder">Surname</string>
+    <string name="KeyPlaceholder">Promo</string>
+    <string name="PasswordPlaceholder">Password</string>
+    <string name="RepeatPasswordPlaceholder">Repeat password</string>
+    <string name="Scenes">Scenes</string>
+    <string name="Balance">Balance</string>
+    <string name="History">History</string>
+    <string name="Payments">Payments</string>
+    <string name="Spents">Spents</string>
+    <string name="Statistics">Statistics</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Settings">Settings</string>
+    <string name="Exit">Exit</string>
+    <string name="FilePanelTitle">Files</string>
+    <string name="AddScene">Add scene</string>
+    <string name="FileName">File name</string>
+    <string name="FileSize">Size</string>
+    <string name="Create">Create</string>
+    <string name="Import">Import</string>
+    <string name="RenderSetup">Render setup</string>
+    <string name="Remove">Remove</string>
+    <string name="Title">Title</string>
+    <string name="StartDate">Start date</string>
+    <string name="EndDate">End date</string>
+    <string name="CreateDate">Create date</string>
+    <string name="Date">Date</string>
+    <string name="Status">Status</string>
+    <string name="Action">Action</string>
+    <string name="Cost">Cost</string>
+    <string name="TotalCost">Total cost</string>
+    <string name="RowsPerPage">Rows per page</string>
+    <string name="ItemSelectedTitle">Items selected</string>
+    <string name="Of">of</string>
+    <string name="YourBalanceTitle">Your balance now</string>
+    <string name="FillUpMoney">Fill up</string>
+    <string name="Minutes">Minutes</string>
+    <string name="Money">Money</string>
+    <string name="Accept">Accept</string>
+    <string name="AcceptLicense">Accept license</string>
+    <string name="Take">Take</string>
+    <string name="Read">Read</string>
+    <string name="Rename">Rename</string>
+    <string name="PaymentType">Type</string>
+    <string name="Amount">Amount</string>
+    <string name="Time">Time</string>
+    <string name="DuplicateFileTitle">Duplicate file name. Rename?</string>
+    <string name="Cancel">Cancel</string>
+    <string name="No">No</string>
+    <string name="Yes">Yes</string>
+    <string name="ChooseLanguage">Choose your language</string>
+    <string name="ruFull">Russian</string>
+    <string name="enFull">English</string>
+    <string name="ruShort">Rus</string>
+    <string name="enShort">Eng</string>
+    <string name="ConnectionStatus">You are</string>
+    <string name="Property">Properties</string>
+    <string name="CurrencyServiceUnavailable">Currency service unavailable!</string>
+    <string name="WrongExtension">Wrong extension!</string>
+    <string name="AvailableExtensions">Available extensions is  </string>
+    <string name="LoadCompleted">Load completed</string>
+    <string name="LoadFailed">Load failed</string>
+    <string name="MinimumAmount">Minimum amount is </string>
+    <string name="InvalidAmount">Wrong amount</string>
+    <string name="LicenseAgreementRequire">License agreement is required!</string>
+    <string name="JavascriptPopupRequire">Javascript popup window is required!</string>
+    <string name="AuthorizationFailed">Authorization failed</string>
+    <string name="RegistrationFailed">Registration failed</string>
+    <string name="RegistrationSuccess">Registration completed</string>
+    <string name="EmailNotFound">Email not found</string>
+    <string name="PasswordSent">New password was sent to email</string>
+    <string name="BonusUnavailable">Bonus unavailable</string>
+    <string name="NotificationUnavailable">NotificationUnavailable</string>
+    <string name="ConvertFailed">Convert failed</string>
+    <string name="ConvertSuccess">Convert success</string>
+    <string name="UserActive">You are back!</string>
+    <string name="UserUnActive">I will wait for you</string>
+    <string name="RemovedSuccess">Remove completed</string>
+    <string name="RemovedFailed">Remove failed</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">Contacts permissions are needed for providing email completions</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="title_activity_vraytask_settings_fragment">Render settings</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_test">testActivity</string>
+    <string name="Download">Download</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <array name="payment_systems">
+        <item name="PayPal">PayPal</item>
+        <item name="Sberbank">Sberbank</item>
+    </array>
+
+    <array name="currency">
+        <item name="RUB">RUB</item>
+        <item name="EUR">EUR</item>
+        <item name="USD">USD</item>
+    </array>
+
+    <array name="Soft">
+        <item name="Max2014">3d Max 2014</item>
+        <item name="Max2016">3d Max 2016</item>
+        <item name="Max2017">3d Max 2017</item>
+    </array>
+
+    <array name="Language">
+        <item name="RUS">Русский</item>
+        <item name="ENG">English</item>
+    </array>
+
+    <array name="RAM">
+        <item name="GB12">12GB</item>
+        <item name="GB24">24GB</item>
+        <item name="GB32">32GB</item>
+        <item name="GB48">48GB</item>
+        <item name="GB64">64GB</item>
+    </array>
+</resources>

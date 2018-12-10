@@ -1,0 +1,135 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.demo.online.payments.BalanceFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/balance"
+            android:text="@string/YourBalanceTitle"
+        />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="18dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/double_grid_step"
+                android:layout_marginStart="@dimen/single_grid_step"
+                android:id="@+id/balance"
+                android:text="180.58"
+                />
+
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@drawable/background"
+        android:layout_margin="@dimen/zero_grid_step"
+        >
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/payment_system"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_marginTop="@dimen/double_grid_step"
+            android:theme="@style/DropDownTheme"
+            android:entries="@array/payment_systems"
+            app:backgroundTint="@color/colorAccent"
+            android:minWidth="180dp"
+            />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/currency"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_marginTop="@dimen/double_grid_step"
+            android:theme="@style/DropDownTheme"
+            android:entries="@array/currency"
+            android:layout_toEndOf="@id/payment_system"
+            app:backgroundTint="@color/colorAccent"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/money_value_wrapper"
+            android:layout_below="@id/payment_system"
+            android:textColorHint="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/money_value"
+                android:backgroundTint="@color/colorAccent"
+                style="@style/Widget.AppCompat.EditText"
+                android:text="0.0"
+                android:textColor="@android:color/white"
+                android:maxLines="1"
+                android:textAlignment="textEnd"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:hint="@string/Money"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/minutes_value_wrapper"
+            android:layout_below="@id/money_value_wrapper"
+            android:textColorHint="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent"
+            android:inputType="numberDecimal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/minutes_value"
+                style="@style/Widget.AppCompat.EditText"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:singleLine="true"
+                android:text="0.0"
+                android:textAlignment="textEnd"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/colorAccent"
+                android:hint="@string/Minutes"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/fill_up_money"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/minutes_value_wrapper"
+            android:text="@string/FillUpMoney"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

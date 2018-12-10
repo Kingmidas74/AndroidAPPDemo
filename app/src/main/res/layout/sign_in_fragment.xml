@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <import type="android.view.View" />
+        <variable name="vm" type="com.demo.online.user.SignVM"/>
+    </data>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.demo.online.user.SignInFragment">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <!-- Login progress -->
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/email_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="@color/colorAccent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/prompt_email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:text="@{vm.email}"
+                            app:textChangedListener="@{vm.emailWatcher}"
+                            android:singleLine="true"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/colorAccent"
+                            android:textSize="20sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/PasswordPlaceholder"
+                            android:imeActionId="6"
+                            android:imeActionLabel="@string/action_sign_in_short"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:text="@{vm.password}"
+                            app:textChangedListener="@{vm.passwordWatcher}"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/colorAccent"
+                            android:singleLine="true"
+                            android:textSize="20sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/double_grid_step">
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/language_select"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            style="@style/Widget.AppCompat.Spinner.Underlined"
+                            android:theme="@style/DropDownTheme"
+                            android:entries="@array/Language"
+                            android:selectedItemPosition="@{vm.languageIndex}"
+                            app:selectedValueChangedListener="@{vm.languageWatcher}"
+                            app:backgroundTint="@color/colorAccent"
+                            >
+                        </android.support.v7.widget.AppCompatSpinner>
+
+                        <TextView
+                            android:id="@+id/forgot_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/forgot_password"
+                            android:textColor="#ffffff"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/email_sign_in_button"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/SignIn"
+                        android:background="@color/colorAccent"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/sign_up_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/double_grid_step"
+                        android:text="@string/SignUp"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+            <ProgressBar
+                android:id="@+id/login_progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/single_grid_step"
+                android:visibility="gone" />
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>

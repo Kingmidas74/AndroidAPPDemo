@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <import type="com.demo.api.StatusList"/>
+        <variable name="item" type="com.demo.online.scenes.tasks.TaskItem"/>
+    </data>
+    <android.support.v7.widget.CardView
+        app:cardElevation="@dimen/activity_vertical_margin"
+        app:selected="@{item.IsSelected}"
+        style="@style/TaskCard"
+        >
+
+        <LinearLayout style="@style/ContainerItem" android:orientation="vertical"
+            >
+            <RelativeLayout style="@style/CardHeader">
+                <ImageButton
+                    app:srcCompat="@drawable/ic_expand_down"
+                    android:id="@+id/task_expand_btn"
+                    android:visibility="visible"
+                    style="@style/CollapseButton"
+                    app:expendState="@{item.IsExpended}"/>
+                <TextView
+                    android:id="@+id/task_title"
+                    style="@style/Title"
+                    android:layout_centerVertical="true"
+                    android:text="@{item.task.Title}"
+                    android:layout_toEndOf="@id/task_expand_btn"/>
+                <TextView
+                    android:id="@+id/task_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:text="@{item.task.Cost.toString()}"
+                    android:textColor="@drawable/list_item_foregrounds"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/CardContent"
+                android:visibility="@{item.IsExpended ? View.VISIBLE : View.GONE}"
+                >
+                <ImageView
+                    android:id="@+id/taskStatusImage"
+                    android:contentDescription="@string/Status"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    app:statusType="@{item.task.Status}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/double_grid_step"
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@id/taskStatusImage">
+                    <TextView
+                        style="@style/SubTitle"
+                        android:text="@{item.task.Status.toString()}"
+                        android:lines="1"/>
+                    <TextView
+                        style="@style/SubTitle"
+                        android:text="@{item.task.Camera}"
+                        android:lines="1"/>
+                    <TextView
+                        style="@style/SubTitle"
+                        android:text="@{item.task.Frames}"
+                        android:lines="1"/>
+                    <TextView
+                        style="@style/SubTitle"
+                        android:text="@{item.task.Resolution}"
+                        android:lines="1"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <LinearLayout style="@style/CardActions">
+                <ImageButton
+                    app:srcCompat="@drawable/ic_start"
+                    android:id="@+id/task_action_btn"
+                    style="@style/CardActionsButton"
+                    app:actionType="@{item.task.Status}"
+                    android:contentDescription="@string/Action" />
+                <ImageButton
+                    app:srcCompat="@drawable/ic_file_download"
+                    android:id="@+id/task_download_btn"
+                    style="@style/CardActionsButton"
+                    android:contentDescription="@string/Download" />
+                <ImageButton
+                    app:srcCompat="@drawable/ic_preview"
+                    android:id="@+id/task_preview_btn"
+                    android:visibility="@{item.task.Status==StatusList.RUNNING ? View.VISIBLE : View.GONE}"
+                    style="@style/CardActionsButton"
+                    android:contentDescription="preview" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>
